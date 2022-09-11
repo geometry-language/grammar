@@ -1,0 +1,10 @@
+ABC
+I = incenter(ABC)
+(I) = incircle(I, ABC)
+
+D = tangent((I), AB)
+E = tangent((I), AC)
+
+F = intersect(segment(AI), (I))
+M = intersect(BF, DE)
+N = intersect(CF, DE)

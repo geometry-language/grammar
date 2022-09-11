@@ -1,0 +1,42 @@
+incenter(ABC) {
+    intersect(angle_bisector(ABC), angle_bisector(ACB))
+}
+
+circumcenter(ABC) {
+    intersect(bisector(AB), bisector(AC))
+}
+
+incircle(I, ABC) {
+    $1 = perpendicular(I, BC)
+    (I, I$1)
+}
+
+incircle(ABC) {
+    $1 = incenter(ABC)
+    incircle($1, ABC)
+}
+
+tangent((I), BC) {
+    perpendicular(I, BC)
+}
+
+tangent(BC, (I)) {
+    perpendicular(I, BC)
+}
+
+tangent((I1), (I2)) {
+    intersect((I1), segment(I1I2))
+}
+
+perpendicular_intersect(A, BC) {
+    intersect(perpendicular(A, BC), BC)
+}
+
+reflect_line(A, BC) {
+    $1 = perpendicular_intersect(A, BC)
+    intersect(($1, $1A), A$1)
+}
+
+reflect_point(A, B) {
+    intersect((B, BA), AB)
+}
